@@ -27,8 +27,19 @@ export default class DistrictRepository {
     }
     if(newDistrict && upperObjKeys.includes(newDistrict)){
       const newObj = Object.assign({}, {[newDistrict]: this.stats[newDistrict]})
-      console.log(newObj)
       return newObj
     }
+  }
+
+  findAverage = (district) => {
+    console.log(district)
+  }
+
+  compareDistricts = (district1, district2) => {
+    console.log(district1, district2)
+  }
+
+  findAllMatches = (search) => {
+    console.log(search)
   }
 }

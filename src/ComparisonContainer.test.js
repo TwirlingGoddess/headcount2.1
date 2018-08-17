@@ -10,6 +10,11 @@ describe('ComparisonContainer', () => {
 	})
 
 	it('should....', () => {
+		// setup
+
+		// execute
+
+		// expectation
 		expect().toBe()
 	})
 })

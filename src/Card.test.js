@@ -10,6 +10,11 @@ describe('Card', () => {
 	})
 
 	it('should', () => {
+		// setup
+
+		// execute
+
+		// expectation
 		expect(wrapper).toBe()
 	})
 

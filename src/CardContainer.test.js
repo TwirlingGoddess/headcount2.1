@@ -10,6 +10,11 @@ describe('CardContainer', () => {
 	})
 
 	it('should....', () => {
+		// setup
+
+		// execute
+
+		// expectation
 		expect().toBe()
 	})
 

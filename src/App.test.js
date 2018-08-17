@@ -34,4 +34,8 @@ describe('App', () => {
 
 		// expectation
 	})
+
+	it('should match the snapshot', () => {
+		expect(wrapper).toMatchSnapshot()
+	})
 })

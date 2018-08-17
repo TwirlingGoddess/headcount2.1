@@ -10,7 +10,7 @@ const districts = new DistrictRepository(kinderData);
 class App extends Component {
 	constructor() {
 		super()
-    
+
 		this.state = {
       cards: {},
 			districts: []
@@ -33,7 +33,7 @@ class App extends Component {
           <SearchForm />
         </header>
         <ComparisonContainer />
-        <CardContainer />
+        <CardContainer districts={this.state.districts}/>
       </div>
     );
   }

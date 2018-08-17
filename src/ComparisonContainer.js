@@ -5,8 +5,10 @@ const ComparisonContainer = ({ comparedCards }) => {
 
 
 	return(
-		{...comparedCards}
-	}
+		<div>
+			{comparedCards}
+		</div>
+	)
 }
 
 export default ComparisonContainer

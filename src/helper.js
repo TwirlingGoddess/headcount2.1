@@ -1,4 +1,5 @@
 import kinderData from './data/kindergartners_in_full_day_program.js';
+import PropTypes from 'prop-types'
 
 
 export default class DistrictRepository {

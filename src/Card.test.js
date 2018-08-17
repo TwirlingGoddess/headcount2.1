@@ -9,8 +9,8 @@ describe('Card', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 
-	// it('should', () => {
-	// 	expect(wrapper).toBe()
-	// })
+	it('should', () => {
+		expect(wrapper).toBe()
+	})
 
 })

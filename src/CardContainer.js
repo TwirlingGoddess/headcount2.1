@@ -17,4 +17,12 @@ const CardContainer = ({districts, selectDistrict}) => {
 	)
 }
 
+CardContainer.propTypes = {
+  districts: PropTypes.array.isRequired
+}
+
+CardContainer.propTypes = {
+  selectDistrict: PropTypes.func.isRequired
+}
+
 export default CardContainer

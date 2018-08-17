@@ -21,7 +21,7 @@ class DistrictRepository extends Component {
     return accu
   }, {})
 
-  findByName = (district='') => {
+  findByName = (districtName='') => {
     const newDistrict = district.toUpperCase()
     const objKeys = Object.keys(this.stats)
     const upperObjKeys = objKeys.map(key => key.toUpperCase())
@@ -49,6 +49,10 @@ class DistrictRepository extends Component {
 
 DistrictRepository.propTypes = {
   district: PropTypes.object.isRequired
+}
+
+DistrictRepository.propTypes = {
+  districtName: PropTypes.object.isRequired
 }
 
 DistrictRepository.propTypes = {

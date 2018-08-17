@@ -1,9 +1,11 @@
+import React from 'react'
 import kinderData from './data/kindergartners_in_full_day_program.js';
 import PropTypes from 'prop-types'
 
 
-export default class DistrictRepository {
+class DistrictRepository extends Component {
   constructor(){
+    super()
   }
   
   stats = kinderData.reduce((accu, district) => {
@@ -44,3 +46,21 @@ export default class DistrictRepository {
     console.log(search)
   }
 }
+
+DistrictRepository.propTypes = {
+  district: PropTypes.object.isRequired
+}
+
+DistrictRepository.propTypes = {
+  district1: PropTypes.object.isRequired
+}
+
+DistrictRepository.propTypes = {
+  district2: PropTypes.object.isRequired
+}
+
+DistrictRepository.propTypes = {
+  search: PropTypes.string.isRequired
+}
+
+export default DistrictRepository

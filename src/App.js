@@ -10,23 +10,33 @@ const districts = new DistrictRepository(kinderData);
 class App extends Component {
 	constructor() {
 		super()
+    
 		this.state = {
+      cards: {},
 			districts: []
 		}
 	}
 
+  updateDistricts = (district) => {
+    console.log(district)
+  }
+
+  toggleCard = (district) => {
+    console.log(district)
+  }
+
   render() {
-  return (
-    <div className="App">
-      <header>
-        <h1>Welcome To Headcount 2.0</h1>
-        <SearchForm />
-      </header>
-      <ComparisonContainer />
-      <CardContainer />
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        <header>
+          <h1>Welcome To Headcount 2.0</h1>
+          <SearchForm />
+        </header>
+        <ComparisonContainer />
+        <CardContainer />
+      </div>
+    );
+  }
 }
 
 export default App;

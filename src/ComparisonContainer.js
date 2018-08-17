@@ -12,4 +12,8 @@ const ComparisonContainer = ({ comparedCards }) => {
 	)
 }
 
+ComparisonContainer.propTypes = {
+  comparedCards: PropTypes.array.isRequired
+}
+
 export default ComparisonContainer

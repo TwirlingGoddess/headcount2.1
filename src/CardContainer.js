@@ -8,6 +8,12 @@ const CardContainer = ({districts, selectDistrict}) => {
 				selectDistrict={selectDistrict}
 		/>
 	})
+
+	return(
+		<div>
+			{deckOfCards}
+		</div>
+	)
 }
 
 export default CardContainer

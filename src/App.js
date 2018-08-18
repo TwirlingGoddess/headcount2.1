@@ -5,12 +5,13 @@ import CardContainer from './CardContainer.js';
 import ComparisonContainer from './ComparisonContainer.js';
 import DistrictRepository  from './helper.js';
 import kinderData from './data/kindergartners_in_full_day_program.js';
+import PropTypes from 'prop-types'
 const districts = new DistrictRepository(kinderData);
 
 class App extends Component {
 	constructor() {
 		super()
-    
+
 		this.state = {
       cards: {},
 			districts: []
@@ -33,7 +34,7 @@ class App extends Component {
           <SearchForm />
         </header>
         <ComparisonContainer />
-        <CardContainer />
+        <CardContainer districts={this.state.districts}/>
       </div>
     );
   }

@@ -9,11 +9,11 @@ const CardContainer = ({districts, selectDistrict}) => {
 									stats={districts[district].stats}
 									key={districts[district].id}
 									selectDistrict={selectDistrict}
-		/>
+						/>
 	})
 
 	return(
-		<div>
+		<div className="Container">
 			{deckOfCards}
 		</div>
 	)
@@ -24,7 +24,7 @@ CardContainer.propTypes = {
 }
 
 CardContainer.propTypes = {
-  selectDistrict: PropTypes.func.isRequired
+  selectDistrict: PropTypes.func
 }
 
 export default CardContainer

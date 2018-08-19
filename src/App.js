@@ -33,7 +33,9 @@ class App extends Component {
           <SearchForm />
         </header>
         <ComparisonContainer />
-        <CardContainer districts={this.state.districts}/>
+        <CardContainer districts={this.state.districts}
+                        selectDistrict={this.toggleCard}
+        />
       </div>
     );
   }

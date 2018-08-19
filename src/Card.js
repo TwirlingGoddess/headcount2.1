@@ -8,13 +8,13 @@ const Card = ({id, location, stats, selectDistrict}) => {
 	if(stats[key] > .5){
 		return(
 			<li className="purple">
-				{key}:{stats[key]}
+				{key}: {stats[key]}
 			</li>
 		)
 	} else {
 		return(
-			<li className="purple">
-				{key}:{stats[key]}
+			<li className="teal">
+				{key}: {stats[key]}
 			</li>
 		)
 	}
@@ -22,7 +22,7 @@ const Card = ({id, location, stats, selectDistrict}) => {
 
 
 	return(
-		<div className="Card" onClick={selectDistrict}>
+		<div className="Card" onClick={() => selectDistrict}>
 			<h2>{location}</h2>
 			<ul>{displayData}</ul>
 		</div>

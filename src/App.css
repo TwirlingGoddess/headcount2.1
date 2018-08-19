@@ -1,9 +1,57 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.App form {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.App .Search {
+	width: 100%;
+	height: 1.5rem;
+}
+
+.App .Container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: space-around;
+	justify-content: space-around;
+}
+
 .App .Card {
-	height: 4rem;
-	width: 6rem;
+
+	display: block;
+	/*flex-direction: column;*/
+	height: 7rem;
+	width: 16rem;
+	border: .35px solid pink;
+	overflow: hidden;
+	cursor: pointer;
+	margin-bottom: 1rem;
 }
 
 .Card:hover {
-	height: 10rem;
+	height: 20rem;
+	transition: 0.5s;
+
+}
+
+.Card li {
+	list-style:none
+}
+
+.Card .purple {
+	color: purple;
+}
+
+.Card .teal {
+	color: teal;
 }

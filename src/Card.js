@@ -38,7 +38,7 @@ Card.propTypes = {
 }
 
 Card.propTypes = {
-  stats: PropTypes.string.isRequired
+  stats: PropTypes.object.isRequired
 }
 
 export default Card

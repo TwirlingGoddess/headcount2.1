@@ -39,7 +39,7 @@ class DistrictRepository extends Component {
       return [...Object.values(this.stats)]
     }
     return Object.keys(this.stats).filter(stat => {
-      return stat.toUpperCase() === search.toUpperCase()
+      return stat.toUpperCase().includes(search.toUpperCase())
     })
   }
 

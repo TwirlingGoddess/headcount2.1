@@ -34,6 +34,15 @@ class DistrictRepository extends Component {
     }
   }
 
+  findAllMatches = (search) => {
+    if(!search) {
+      return [...Object.values(this.stats)]
+    }
+    return Object.keys(this.stats).filter(stat => {
+      return stat.toUpperCase().includes(search.toUpperCase())
+    })
+  }
+
   findAverage = (district) => {
     console.log(district)
   }
@@ -42,9 +51,6 @@ class DistrictRepository extends Component {
     console.log(district1, district2)
   }
 
-  findAllMatches = (search) => {
-    console.log(search)
-  }
 }
 
 DistrictRepository.propTypes = {

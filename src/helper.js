@@ -1,36 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 import kinderData from './data/kindergartners_in_full_day_program.js';
 import PropTypes from 'prop-types'
-
 
 class DistrictRepository extends Component {
   constructor(){
     super()
+
+    this.stats = this.filterCards(kinderData)
   }
   
-  stats = kinderData.reduce((accu, district) => {
-    const locale = district.Location
-    if(isNaN(district.Data)){
-      district.Data = 0
-    }
-    const schoolInfo = {[district.TimeFrame]: Number(parseFloat(district.Data).toFixed(3))}
-    if(!accu[locale]){
-      accu[locale] = schoolInfo
-    }
-    accu[locale]= {...schoolInfo, ...accu[locale]}
-    return accu
-  }, {})
+  filterCards = (kinderData) => {
 
-  findByName = (districtName='') => {
-    const newDistrict = district.toUpperCase()
-    const objKeys = Object.keys(this.stats)
-    const upperObjKeys = objKeys.map(key => key.toUpperCase())
-    if (!district || objKeys.includes(!district)) {
-      return undefined
-    }
-    if(newDistrict && upperObjKeys.includes(newDistrict)){
-      const newObj = Object.assign({}, {[newDistrict]: this.stats[newDistrict]})
-      return newObj
+    return kinderData.reduce((accu, district) => {
+      let location = district.Location.toUpperCase();
+      let schoolYear = district.TimeFrame
+      let roundedNum= Number(parseFloat(district.Data).toFixed(3))
+      if(!accu[location]) {
+        accu[location] = {location, stats: {}}
+      }
+      accu[location].stats[schoolYear] = roundedNum || 0
+      return accu;
+    }, {})
+  }
+
+  findByName = (districtName = '') => {
+    const uppedName = districtName.toUpperCase();
+    
+    if(!this.stats[uppedName]) {
+      return undefined} 
+
+    if (this.stats[uppedName]) {
+      return this.stats[uppedName]
     }
   }
 

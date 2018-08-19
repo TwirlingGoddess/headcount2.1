@@ -13,8 +13,7 @@ class App extends Component {
 		super()
 
 		this.state = {
-      cards: {},
-			districts: []
+			districts: districts.stats
 		}
 	}
 

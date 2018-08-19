@@ -1,1 +1,9 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+.App .Card {
+	height: 4rem;
+	width: 6rem;
+}
+
+.Card:hover {
+	height: 10rem;
+}

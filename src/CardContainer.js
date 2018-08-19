@@ -3,10 +3,12 @@ import Card from './Card';
 import PropTypes from 'prop-types'
 
 const CardContainer = ({districts, selectDistrict}) => {
-	const deckOfCards = districts.map(district => {
-		<Card 	{...district}
-				key={district.id}
-				selectDistrict={selectDistrict}
+	let districtKeyArray = Object.keys(districts)
+	const deckOfCards = districtKeyArray.map(district => {
+		return <Card 	location={districts[district].location}
+									stats={districts[district].stats}
+									key={districts[district].id}
+									selectDistrict={selectDistrict}
 		/>
 	})
 

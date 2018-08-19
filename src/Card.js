@@ -1,11 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Card = ({location, stats, selectDistrict}) => {
+const Card = ({id, location, stats, selectDistrict}) => {
+
+	const displayData =
+	Object.keys(stats).map(key => {
+	if(stats[key] > .5){
+		return(
+			<li className="purple">
+				{key}:{stats[key]}
+			</li>
+		)
+	} else {
+		return(
+			<li className="purple">
+				{key}:{stats[key]}
+			</li>
+		)
+	}
+})
+
+
 	return(
-		<div onClick={selectDistrict}>
+		<div className="Card" onClick={selectDistrict}>
 			<h2>{location}</h2>
-			<p>{stats}</p>
+			<ul>{displayData}</ul>
 		</div>
 	)
 }

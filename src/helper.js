@@ -6,55 +6,33 @@ class DistrictRepository extends Component {
   constructor(){
     super()
 
-    this.stats = this.populateCards(kinderData)
+    this.stats = this.filterCards(kinderData)
   }
   
-  populateCards = (kinderData) => {
+  filterCards = (kinderData) => {
+
     return kinderData.reduce((accu, district) => {
-      const locale = district.Location.toUpperCase()
-      const schoolYear = district.TimeFrame
-      const roundedNum = Number(parseFloat(district.Data).toFixed(3))
-      if(!accu[locale]){
-        accu[locale] = {locale, stats:{}}
+      let location = district.Location.toUpperCase();
+      let schoolYear = district.TimeFrame
+      let roundedNum= Number(parseFloat(district.Data).toFixed(3))
+      if(!accu[location]) {
+        accu[location] = {location, stats: {}}
       }
-      accu[locale].stats[schoolYear] = roundedNum || 0
-      return accu
+      accu[location].stats[schoolYear] = roundedNum || 0
+      return accu;
     }, {})
   }
 
   findByName = (districtName = '') => {
-    const upperDistrict = districtName.toUpperCase();
+    const uppedName = districtName.toUpperCase();
     
-    if(!this.stats[upperDistrict]) {
+    if(!this.stats[uppedName]) {
       return undefined} 
 
-    if (this.stats[upperDistrict]) {
-      return this.stats[upperDistrict]
+    if (this.stats[uppedName]) {
+      return this.stats[uppedName]
     }
   }
-
-
-
-
-  // findByName = (districtName='') => {
-  //   const objKeys = Object.keys(this.stats)
-  //   objKeys.reduce((districtListObj, key) => {
-  //     if (!districtName) {
-  //       return undefined
-  //     }
-  //     if (!key.toUpperCase()!==districtName.toUpperCase()) {
-  //       return undefined
-  //     }
-  //     if(key.toUpperCase()===districtName.toUpperCase()) {
-  //       districtListObj = {[key]: this.stats[key]};
-  //         // console.log(updatedObj)
-  //       // return updatedObj
-  //     }
-  //     Object.assign(updatedObj, districtListObj)
-  //     return districtListObj
-  //   }, {})
-  //   return updatedObj
-  // }
 
   findAverage = (district) => {
     console.log(district)

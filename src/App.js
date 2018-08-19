@@ -17,8 +17,14 @@ class App extends Component {
 		}
 	}
 
-  updateDistricts = (district) => {
-    console.log(district)
+  filterDistricts = (string) => {
+    const searchedDistricts = districts.findByName(string);
+    console.log(searchedDistricts)
+    if (searchedDistricts) {
+      this.setState({
+        cards: {...searchedDistricts}
+      });
+    }
   }
 
   selectDistrict = (id) => {
@@ -30,7 +36,7 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>Welcome To Headcount 2.0</h1>
-          <SearchForm />
+          <SearchForm filterDistricts={this.filterDistricts}/>
         </header>
         <ComparisonContainer />
         <CardContainer districts={this.state.districts}

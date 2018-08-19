@@ -6,14 +6,15 @@ class SearchForm extends Component {
 		super()
 
 		this.state = {
-			value: ''
+			searchWord: ''
 		}
 	}
 
 	handleChange = (event) => {
 		this.setState({
-			value: event.target.value
+			searchWord: event.target.value
 		})
+		this.props.filterDistricts(event.target.value)
 	}
 
 	render() {
@@ -24,10 +25,15 @@ class SearchForm extends Component {
 						className="Search"
 						placeholder="Type in district to Search"
 						onChange={this.handleChange}
+
 				/>
 			</form>
 		)
 	}
 }
+
+SearchForm.propTypes = {
+  filterDistricts: PropTypes.func
+};
 
 export default SearchForm

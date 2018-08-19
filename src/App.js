@@ -41,4 +41,8 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  id: PropTypes.number
+}
+
 export default App;

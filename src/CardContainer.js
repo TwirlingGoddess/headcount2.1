@@ -24,7 +24,7 @@ CardContainer.propTypes = {
 }
 
 CardContainer.propTypes = {
-  selectDistrict: PropTypes.func
+  selectDistrict: PropTypes.func.isRequired
 }
 
 export default CardContainer

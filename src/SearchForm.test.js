@@ -3,10 +3,14 @@ import Enzyme from 'enzyme';
 import SearchForm from './SearchForm';
 
 describe('SearchForm', () => {
+  let handleMock;
+  let wrapper;
 
-	beforeEach(() => {
-
-	})
+  beforeEach(() => {
+    // Setup
+    handleMock = jest.fn()
+    wrapper = shallow(<SearchForm onChange={handleMock} />)
+  })
 
 	it('should have a default state of an empty string', () => {
 		// mock state

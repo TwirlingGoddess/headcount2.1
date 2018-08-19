@@ -21,8 +21,8 @@ class App extends Component {
     console.log(district)
   }
 
-  toggleCard = (district) => {
-    console.log(district)
+  selectDistrict = (district) => {
+    Object.keys(this.state.districts).filter(school => district !== school)  
   }
 
   render() {
@@ -34,7 +34,7 @@ class App extends Component {
         </header>
         <ComparisonContainer />
         <CardContainer districts={this.state.districts}
-                        selectDistrict={this.toggleCard}
+                        selectDistrict={this.selectDistrict}
         />
       </div>
     );

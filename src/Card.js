@@ -1,25 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Card = ({location, stats, selectDistrict}) => {
+const Card = ({id, location, stats, selectDistrict}) => {
+
+	const displayData =
+		Object.keys(stats).map((date, index) => {
+		if(stats[date] > .5){
+			return(
+				<li key={index} className="purple">
+					{date}: {stats[date]}
+				</li>
+			)
+		} else {
+			return(
+				<li key={index} className="teal">
+					{date}: {stats[date]}
+				</li>
+			)
+		}
+	})
+
+
 	return(
-		<div onClick={selectDistrict}>
+		<div className="Card" onClick={() => selectDistrict(id)}>
 			<h2>{location}</h2>
-			<p>{stats}</p>
+			<ul>{displayData}</ul>
 		</div>
 	)
 }
 
 Card.propTypes = {
-  selectDistrict: PropTypes.func.isRequired
+  selectDistrict: PropTypes.func
 }
 
 Card.propTypes = {
-  location: PropTypes.string.isRequired
+  location: PropTypes.string
 }
 
 Card.propTypes = {
-  stats: PropTypes.string.isRequired
+  stats: PropTypes.object
+}
+
+Card.propTypes = {
+  index: PropTypes.number
 }
 
 export default Card

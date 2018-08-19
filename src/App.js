@@ -13,8 +13,7 @@ class App extends Component {
 		super()
 
 		this.state = {
-      cards: {},
-			districts: []
+			districts: districts.stats
 		}
 	}
 
@@ -28,8 +27,8 @@ class App extends Component {
     }
   }
 
-  toggleCard = (district) => {
-    console.log(district)
+  selectDistrict = (id) => {
+    Object.keys(this.state.districts).filter(school => id !== school.id)  
   }
 
   render() {
@@ -40,14 +39,16 @@ class App extends Component {
           <SearchForm filterDistricts={this.filterDistricts}/>
         </header>
         <ComparisonContainer />
-        <CardContainer districts={this.state.districts}/>
+        <CardContainer districts={this.state.districts}
+                        selectDistrict={this.selectDistrict}
+        />
       </div>
     );
   }
 }
 
 App.propTypes = {
-
+  id: PropTypes.number
 }
 
 export default App;

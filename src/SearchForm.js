@@ -19,11 +19,13 @@ class SearchForm extends Component {
 
 	render() {
 		return(
-			<form>
+			<form >
 				<input 	type='text' 
-								value={this.state.searchWord} 
-								placeholder="Type in district to Search"
-								onChange={this.handleChange}
+						value={this.state.value}
+						className="Search"
+						placeholder="Type in district to Search"
+						onChange={this.handleChange}
+
 				/>
 			</form>
 		)

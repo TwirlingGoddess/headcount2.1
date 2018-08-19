@@ -3,7 +3,17 @@
 exports[`Card should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Card />,
+  Symbol(enzyme.__unrendered__): <Card
+    id={7}
+    location="Colorado"
+    selectDistrict={[Function]}
+    stats={
+        Object {
+            "2004": 0.75,
+            "2005": 0.9,
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +27,28 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h2 />,
-        <p />,
+        <h2>
+          Colorado
+</h2>,
+        <ul>
+          <li
+                    className="purple"
+          >
+                    2004
+                    : 
+                    0.75
+          </li>
+          <li
+                    className="purple"
+          >
+                    2005
+                    : 
+                    0.9
+          </li>
+</ul>,
       ],
-      "onClick": undefined,
+      "className": "Card",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -29,10 +57,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": "Colorado",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "Colorado",
         "type": "h2",
       },
       Object {
@@ -40,11 +68,67 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            <li
+              className="purple"
+>
+              2004
+              : 
+              0.75
+</li>,
+            <li
+              className="purple"
+>
+              2005
+              : 
+              0.9
+</li>,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": "p",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "2004",
+                ": ",
+                0.75,
+              ],
+              "className": "purple",
+            },
+            "ref": null,
+            "rendered": Array [
+              "2004",
+              ": ",
+              0.75,
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "2005",
+                ": ",
+                0.9,
+              ],
+              "className": "purple",
+            },
+            "ref": null,
+            "rendered": Array [
+              "2005",
+              ": ",
+              0.9,
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
       },
     ],
     "type": "div",
@@ -56,10 +140,28 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h2 />,
-          <p />,
+          <h2>
+            Colorado
+</h2>,
+          <ul>
+            <li
+                        className="purple"
+            >
+                        2004
+                        : 
+                        0.75
+            </li>
+            <li
+                        className="purple"
+            >
+                        2005
+                        : 
+                        0.9
+            </li>
+</ul>,
         ],
-        "onClick": undefined,
+        "className": "Card",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -68,10 +170,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": "Colorado",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "Colorado",
           "type": "h2",
         },
         Object {
@@ -79,11 +181,67 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              <li
+                className="purple"
+>
+                2004
+                : 
+                0.75
+</li>,
+              <li
+                className="purple"
+>
+                2005
+                : 
+                0.9
+</li>,
+            ],
           },
           "ref": null,
-          "rendered": null,
-          "type": "p",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "2004",
+                  ": ",
+                  0.75,
+                ],
+                "className": "purple",
+              },
+              "ref": null,
+              "rendered": Array [
+                "2004",
+                ": ",
+                0.75,
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "2005",
+                  ": ",
+                  0.9,
+                ],
+                "className": "purple",
+              },
+              "ref": null,
+              "rendered": Array [
+                "2005",
+                ": ",
+                0.9,
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
         },
       ],
       "type": "div",

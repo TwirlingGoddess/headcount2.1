@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Card = ({index, location, stats, selectDistrict}) => {
+const Card = ({id, location, stats, selectDistrict}) => {
 
 	const displayData =
 		Object.keys(stats).map((date, index) => {
@@ -22,7 +22,7 @@ const Card = ({index, location, stats, selectDistrict}) => {
 
 
 	return(
-		<div className="Card" onClick={selectDistrict}>
+		<div className="Card" onClick={() => selectDistrict(id)}>
 			<h2>{location}</h2>
 			<ul>{displayData}</ul>
 		</div>

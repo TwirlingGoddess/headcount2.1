@@ -21,8 +21,8 @@ class App extends Component {
     console.log(district)
   }
 
-  selectDistrict = (district) => {
-    Object.keys(this.state.districts).filter(school => district !== school)  
+  selectDistrict = (id) => {
+    Object.keys(this.state.districts).filter(school => id !== school.id)  
   }
 
   render() {

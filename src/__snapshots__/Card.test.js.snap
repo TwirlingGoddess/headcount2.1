@@ -4,7 +4,8 @@ exports[`Card should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
-    location="ACADEMY 20"
+    id={7}
+    location="Colorado"
     selectDistrict={[Function]}
     stats={
         Object {
@@ -27,7 +28,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h2>
-          ACADEMY 20
+          Colorado
 </h2>,
         <ul>
           <li
@@ -56,10 +57,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "ACADEMY 20",
+          "children": "Colorado",
         },
         "ref": null,
-        "rendered": "ACADEMY 20",
+        "rendered": "Colorado",
         "type": "h2",
       },
       Object {
@@ -140,7 +141,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h2>
-            ACADEMY 20
+            Colorado
 </h2>,
           <ul>
             <li
@@ -169,10 +170,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "ACADEMY 20",
+            "children": "Colorado",
           },
           "ref": null,
-          "rendered": "ACADEMY 20",
+          "rendered": "Colorado",
           "type": "h2",
         },
         Object {

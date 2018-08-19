@@ -20,7 +20,7 @@ const CardContainer = ({districts, selectDistrict}) => {
 }
 
 CardContainer.propTypes = {
-  districts: PropTypes.array.isRequired
+  districts: PropTypes.object.isRequired
 }
 
 CardContainer.propTypes = {

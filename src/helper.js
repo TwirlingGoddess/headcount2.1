@@ -23,10 +23,8 @@ class DistrictRepository extends Component {
     }, {})
   }
 
-  findByName = (districtName = '') => {
-    const upperString = districtName.toUpperCase();
-    // const newString = this.stats.location.includes(upperString)
-    // console.log(upperString)
+  findByName = (district = '') => {
+    const upperString = district.toUpperCase();
     if(!this.stats[upperString]) {
       return undefined} 
 
@@ -45,7 +43,12 @@ class DistrictRepository extends Component {
   }
 
   findAverage = (district) => {
-    console.log(district)
+    let distObj = this.findByName(district)
+    let distValues = Object.values(distObj.stats)
+    let average = distValues.reduce((sum, num) => {
+      return sum + num
+    }, 0)
+    return Number(parseFloat(average/distValues.length).toFixed(3))
   }
 
   compareDistricts = (district1, district2) => {
@@ -55,11 +58,7 @@ class DistrictRepository extends Component {
 }
 
 DistrictRepository.propTypes = {
-  district: PropTypes.object.isRequired
-}
-
-DistrictRepository.propTypes = {
-  districtName: PropTypes.object.isRequired
+  district: PropTypes.string.isRequired
 }
 
 DistrictRepository.propTypes = {

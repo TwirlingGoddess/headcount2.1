@@ -5,6 +5,15 @@
 	align-items: center;
 	box-sizing: border-box;
 	width: 100%;
+	background-color: lightyellow;
+}
+
+.App h1 {
+	color: navy;
+	text-shadow: 3px 2px orange;
+	font-size: 3rem;
+	text-align: center;
+	margin: 0 1rem 0 1rem;
 }
 
 .App form {
@@ -24,22 +33,32 @@
 	flex-wrap: wrap;
 	align-items: space-around;
 	justify-content: space-around;
+	background-color: lightyellow;
 }
 
-.highlighter {
+.highlight {
 	border: 2px solid magenta;
 }
 
 .App .Card {
-
-	display: block;
-	/*flex-direction: column;*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	height: 7rem;
 	width: 16rem;
-	border: .35px solid pink;
+	border: 1.5px solid pink;
+	/*border-radius: 9px 9px 9px 9px;*/
 	overflow: hidden;
 	cursor: pointer;
 	margin-bottom: 1rem;
+}
+
+.App h2 {
+	color: navy
+}
+
+.App h3 {
+	color: blue
 }
 
 .Card:hover {

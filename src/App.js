@@ -21,25 +21,28 @@ class App extends Component {
   filterDistricts = (string) => {
     const searchedDistricts = districts.findByName(string);
     if (!searchedDistricts) {
-      this.setState({
-        displayedCards: []
-      })
+       return
     }
     if (searchedDistricts) {
+      console.log(searchedDistricts)
       this.setState({
-        displayedCards: [...this.state.displayedCards, searchedDistricts]
+        districts: { searchedDistricts }
       });
       // return "I LOVE PROBLEM SOLVING"
     }
   }
 
-  selectDistrict = (id) => {
-    const searchObj = Object.keys(this.state.districts).filter(school => {
-      return id !== school.id
-    })
+  selectDistrict = (district) => {
     this.setState({
-      displayedCards: [...searchObj]
+      displayedCards: [...this.state.displayedCards, district]
     })
+  }
+
+  removeCard = (id) => {
+    const cardLeft = this.state.displayedCards.find(object => object !== object)
+    // this.setState({
+    //   displayedCards:  [...this.state.displayedCards, cardLeft]
+    // })
   }
 
   render() {
@@ -47,9 +50,11 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>Welcome To Headcount 2.0</h1>
-          <SearchForm filterDistricts={filterDistricts}/>
+          <SearchForm filterDistricts={this.filterDistricts}/>
         </header>
-        <ComparisonContainer />
+        <ComparisonContainer  cardsToCompare={this.state.displayedCards}
+                              removeCard={this.removeCard}
+        />
         <CardContainer districts={this.state.districts}
                         selectDistrict={this.selectDistrict}
         />
@@ -59,7 +64,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  id: PropTypes.number
+  district: PropTypes.object
 }
 
 export default App;

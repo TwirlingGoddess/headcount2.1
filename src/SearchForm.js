@@ -14,7 +14,7 @@ class SearchForm extends Component {
 		this.setState({
 			searchWord: event.target.value
 		})
-		this.props.filterDistricts(event.target.value)
+		return this.props.filterDistricts(event.target.value)
 	}
 
 	render() {
@@ -33,7 +33,7 @@ class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
-  filterDistricts: PropTypes.func
+  filterDistricts: PropTypes.func.isRequired
 };
 
 export default SearchForm

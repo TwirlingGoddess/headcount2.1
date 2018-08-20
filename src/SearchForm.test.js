@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import SearchForm from './SearchForm';
+import App from './App'
 
 describe('SearchForm', () => {
   let handleMock;
@@ -10,7 +11,9 @@ describe('SearchForm', () => {
 
   beforeEach(() => {
     handleMock = jest.fn()
-    wrapper = shallow(<SearchForm onChange={handleMock} />)
+    wrapper = shallow(<SearchForm onChange={handleMock}
+    															filterDistricts={jest.fn()}
+    									 />)
   })
 
   it('should match the snapshot', () => {
@@ -19,14 +22,14 @@ describe('SearchForm', () => {
 
 	it('should have a default state of an empty string', () => {
 		expected = ''
-		expect(wrapper.state().searchWord).toEqual(expected)
+		expect(wrapper.state('searchWord')).toEqual(expected)
 	})
 
-  it('updates the state of when the input value changes', () => {
+  it('should update the state of when the input value changes', () => {
 		mockString = { target: { value: 'abc'} }
 	  expected = 'abc' ;
-	  wrapper.instance().handleChange(mockString)
-	  expect(wrapper.state().searchWord).toEqual(expected)
+	  wrapper.find('.Search').simulate('change', mockString)
+	  expect(wrapper.state('searchWord')).toBe(expected)
   })
 
   it('should invoke handleChange function when input value changes', () => {
@@ -37,8 +40,5 @@ describe('SearchForm', () => {
 		wrapper.find('.Search').simulate('change', mockString)
     expect(spy).toHaveBeenCalled()
   })
-
-
-
 
 })

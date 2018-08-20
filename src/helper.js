@@ -43,7 +43,7 @@ class DistrictRepository extends Component {
   }
 
   findAverage = (district) => {
-    let distObj = this.findByName(district)
+    let distObj = this.findByName(district.toUpperCase())
     let distValues = Object.values(distObj.stats)
     let average = distValues.reduce((sum, num) => {
       return sum + num
@@ -51,10 +51,16 @@ class DistrictRepository extends Component {
     return Number(parseFloat(average/distValues.length).toFixed(3))
   }
 
-  compareDistricts = (district1, district2) => {
-    console.log(district1, district2)
+  compareDistrictAverages = (district1, district2) => {
+    let average1 = this.findAverage(district1);
+    let average2 = this.findAverage(district2);
+    let averageObj = { 
+      [district1.toUpperCase()]: Number(parseFloat(average1).toFixed(3)),
+      [district2.toUpperCase()]: Number(parseFloat(average2).toFixed(3)),
+      compared: Number(parseFloat(average1/average2).toFixed(3))
+      }
+    return averageObj
   }
-
 }
 
 DistrictRepository.propTypes = {
@@ -62,11 +68,11 @@ DistrictRepository.propTypes = {
 }
 
 DistrictRepository.propTypes = {
-  district1: PropTypes.object.isRequired
+  district1: PropTypes.string.isRequired
 }
 
 DistrictRepository.propTypes = {
-  district2: PropTypes.object.isRequired
+  district2: PropTypes.string.isRequired
 }
 
 DistrictRepository.propTypes = {

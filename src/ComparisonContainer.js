@@ -1,5 +1,4 @@
 import React from 'react';
-import './ComparisonContainer.css';
 import PropTypes from 'prop-types';
 import DistrictRepository from './helper.js';
 const districts = new DistrictRepository()

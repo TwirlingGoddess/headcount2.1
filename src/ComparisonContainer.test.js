@@ -1,20 +1,25 @@
 import React from 'react';
+import Card from './Card';
+import ComparisonContainer from './ComparisonContainer.js';
 import { shallow } from 'enzyme';
-import ComparisonContainer from './ComparisonContainer';
 
-describe('ComparisonContainer', () => {
+describe('Card Container', () => {
+	let mockCards
+	let wrapper
 
-	it('should match the snapshot', () => {
-		const wrapper = shallow(<ComparisonContainer />)
-		expect(wrapper).toMatchSnapshot()
+	beforeEach(() => {
+    mockCards = [ {'ACADEMY 20': { 2004: 0.75 }}, 
+      {'TacoLand': { 2004: 0.75 }} ];
+    wrapper = shallow(<ComparisonContainer cardsToCompare={mockCards} />);
 	})
 
-	it('should....', () => {
-		// setup
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
 
-		// execute
+  it('should render all of the districts', () => {
+    const expected = wrapper.state.displayedCards.length;
+    expect(expected).toEqual(2);
+  })
 
-		// expectation
-		expect().toBe()
-	})
 })

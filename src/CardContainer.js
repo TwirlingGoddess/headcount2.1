@@ -8,7 +8,7 @@ const CardContainer = ({districts, selectDistrict}) => {
 		return <Card 	location={districts[district].location}
 									stats={districts[district].stats}
 									key={districts[district].id}
-									selectDistrict={selectDistrict}
+									selectDistrict={() => selectDistrict(districts[district])}
 						/>
 	})
 

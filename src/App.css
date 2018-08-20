@@ -26,6 +26,10 @@
 	justify-content: space-around;
 }
 
+.highlighter {
+	border: 2px solid magenta;
+}
+
 .App .Card {
 
 	display: block;

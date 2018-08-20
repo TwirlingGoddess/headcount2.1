@@ -41,4 +41,14 @@ describe('SearchForm', () => {
     expect(spy).toHaveBeenCalled()
   })
 
+    it('should call filterDistricts function when handleChange is invoked', () => {
+		wrapper = shallow(<SearchForm onChange={handleMock}
+    														filterDistricts={jest.fn()}
+										/>)
+		const spy = jest.spyOn(wrapper.instance(), 'filterDistricts')
+		mockString = { target: { value: 'pho'} }
+  	wrapper.find('.Search').simulate('change', mockString)
+  	expect(spy).toBeCalled()
+  })
+
 })

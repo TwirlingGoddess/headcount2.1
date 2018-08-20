@@ -1,64 +1,44 @@
 import React from 'react';
-import Enzyme from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import SearchForm from './SearchForm';
+import App from './App'
 
 describe('SearchForm', () => {
   let handleMock;
   let wrapper;
+  let mockString
+  let expected
 
   beforeEach(() => {
-    // Setup
     handleMock = jest.fn()
-    wrapper = shallow(<SearchForm onChange={handleMock} />)
+    wrapper = shallow(<SearchForm onChange={handleMock}
+    															filterDistricts={jest.fn()}
+    									 />)
+  })
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
   })
 
 	it('should have a default state of an empty string', () => {
-		// mock state
-		// setup
-
-		// execute
-
-		// expectation
+		expected = ''
+		expect(wrapper.state('searchWord')).toEqual(expected)
 	})
 
-	it('should match the snapshot', () => {
-		// setup
+  it('should update the state of when the input value changes', () => {
+		mockString = { target: { value: 'abc'} }
+	  expected = 'abc' ;
+	  wrapper.find('.Search').simulate('change', mockString)
+	  expect(wrapper.state('searchWord')).toBe(expected)
+  })
 
-		// execute
+  it('should invoke handleChange function when input value changes', () => {
+		wrapper = mount(<SearchForm onChange={handleMock} />)
+		const spy = spyOn(wrapper.instance(), 'handleChange')
+    wrapper.instance().forceUpdate()
+		mockString = { target: { value: 'taco'} }
+		wrapper.find('.Search').simulate('change', mockString)
+    expect(spy).toHaveBeenCalled()
+  })
 
-		// expectation
-
-	})
-
-	it('should update state whenever handleChange is invoked', () => {
-		// setup
-
-		// execute
-
-		// expectation
-	})
-
-	it('should utilize autocomplete from the complete me file correctly', () => {
-		// setup
-
-		// execute
-
-		// expectation
-	})
-
-	it('should only return the cards whose location includes the value in state', () => {
-		// setup
-
-		// execute
-
-		// expectation
-	})
-
-	it('should be case insensitive', () => {
-		// setup
-
-		// execute
-
-		// expectation
-	})
 })

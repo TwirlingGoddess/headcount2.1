@@ -13,22 +13,33 @@ class App extends Component {
 		super()
 
 		this.state = {
+      displayedCards: [],
 			districts: districts.stats
 		}
 	}
 
   filterDistricts = (string) => {
     const searchedDistricts = districts.findByName(string);
-    console.log(searchedDistricts)
+    if (!searchedDistricts) {
+      this.setState({
+        displayedCards: []
+      })
+    }
     if (searchedDistricts) {
       this.setState({
-        cards: {...searchedDistricts}
+        displayedCards: [...this.state.displayedCards, searchedDistricts]
       });
+      // return "I LOVE PROBLEM SOLVING"
     }
   }
 
   selectDistrict = (id) => {
-    Object.keys(this.state.districts).filter(school => id !== school.id)  
+    const searchObj = Object.keys(this.state.districts).filter(school => {
+      return id !== school.id
+    })
+    this.setState({
+      displayedCards: [...searchObj]
+    })
   }
 
   render() {
@@ -36,7 +47,7 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>Welcome To Headcount 2.0</h1>
-          <SearchForm filterDistricts={this.filterDistricts}/>
+          <SearchForm filterDistricts={filterDistricts}/>
         </header>
         <ComparisonContainer />
         <CardContainer districts={this.state.districts}

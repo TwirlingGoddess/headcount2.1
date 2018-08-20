@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import kinderData from './data/kindergartners_in_full_day_program.js';
 import PropTypes from 'prop-types'
 
@@ -24,13 +24,14 @@ class DistrictRepository extends Component {
   }
 
   findByName = (districtName = '') => {
-    const uppedName = districtName.toUpperCase();
-    
-    if(!this.stats[uppedName]) {
+    const upperString = districtName.toUpperCase();
+    // const newString = this.stats.location.includes(upperString)
+    // console.log(upperString)
+    if(!this.stats[upperString]) {
       return undefined} 
 
-    if (this.stats[uppedName]) {
-      return this.stats[uppedName]
+    if (this.stats[upperString]) {
+      return this.stats[upperString]
     }
   }
 

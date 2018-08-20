@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 class SearchForm extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 
 		this.state = {
 			searchWord: ''
@@ -14,17 +14,17 @@ class SearchForm extends Component {
 		this.setState({
 			searchWord: event.target.value
 		})
-		this.props.filterDistricts(event.target.value)
+		return this.props.filterDistricts(event.target.value)
 	}
 
 	render() {
 		return(
 			<form >
 				<input 	type='text' 
-						value={this.state.value}
-						className="Search"
-						placeholder="Type in district to Search"
-						onChange={this.handleChange}
+								value={this.state.value}
+								className="Search"
+								placeholder="Type in district to Search"
+								onChange={this.handleChange}
 
 				/>
 			</form>
@@ -33,7 +33,7 @@ class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
-  filterDistricts: PropTypes.func
+  filterDistricts: PropTypes.func.isRequired
 };
 
 export default SearchForm

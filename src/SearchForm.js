@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 class SearchForm extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 
 		this.state = {
 			searchWord: ''
@@ -21,10 +21,10 @@ class SearchForm extends Component {
 		return(
 			<form >
 				<input 	type='text' 
-						value={this.state.value}
-						className="Search"
-						placeholder="Type in district to Search"
-						onChange={this.handleChange}
+								value={this.state.value}
+								className="Search"
+								placeholder="Type in district to Search"
+								onChange={this.handleChange}
 
 				/>
 			</form>

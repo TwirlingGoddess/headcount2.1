@@ -29,7 +29,7 @@ describe('CardContainer', () => {
 	})
 
 	it('should render all the ideas in state', () => {
-    expect(wrapper.find(Card).length).toEqual(2)
+    	expect(wrapper.find(Card).length).toEqual(2)
   })	
 
 })

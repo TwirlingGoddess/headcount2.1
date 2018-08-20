@@ -13,16 +13,21 @@ class App extends Component {
 		super()
 
 		this.state = {
+      displayedCards: [],
 			districts: districts.stats
 		}
 	}
 
   filterDistricts = (string) => {
     const searchedDistricts = districts.findByName(string);
-    console.log(searchedDistricts)
+    if (!searchedDistricts) {
+      this.setState({
+        displayedCards: []
+      })
+    }
     if (searchedDistricts) {
       this.setState({
-        cards: {...searchedDistricts}
+        displayedCards: [...this.state.displayedCards, searchedDistricts]
       });
     }
   }

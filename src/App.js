@@ -26,7 +26,7 @@ class App extends Component {
     if (searchedDistricts) {
       console.log(searchedDistricts)
       this.setState({
-        districts: { searchedDistricts }
+        districts: { ...searchedDistricts }
       });
       // return "I LOVE PROBLEM SOLVING"
     }
